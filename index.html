@@ -17,7 +17,11 @@
                 font-family: 'Roboto', sans-serif;
             }
             body {
-                @apply font-normal;
+                @apply font-normal text-sm text-slate-500;
+            }
+
+            svg {
+                @apply inline-block align-middle;
             }
 
             .toggle-view.active {
@@ -35,41 +39,72 @@
             .ai-white-bg {
                 @apply bg-white dark:bg-gray-800;
             }
+
+            .sidebar-width {
+                @apply w-56;
+            }
         }
   </style>
 </head>
 
 <body class="ai-bg text-gray-700 dark:text-slate-100">
-    <header class="flex items-stretch border-b ai-border flex-row ai-white-bg px-3">
-        <div class="w-56 border-r ai-border flex items-center">
-            <p class="text-lg font-bold">CHAT AI</p>
-        </div>
-        <div class="grow flex justify-between items-center py-1">
-            <p class="pl-2 md:pl-4">Chat</p>
-            <div class="flex bg-gray-100 dark:bg-gray-700 p-1 rounded-md border ai-border">
-                <div data-view="light" class="p-1 light-icon toggle-view active rounded-md mr-2 cursor-pointer">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
-                        width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="none" d="M0 0h24v24H0z"></path>
-                        <path
-                            d="M12 9c1.65 0 3 1.35 3 3s-1.35 3-3 3-3-1.35-3-3 1.35-3 3-3m0-2c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 000-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 000-1.41.996.996 0 00-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 000-1.41.996.996 0 00-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z">
-                        </path>
-                    </svg>
-                </div>
-                <div data-view="dark" class="p-1 dark-icon toggle-view rounded-md cursor-pointer">
-                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <g id="Dark">
+    <div class="min-h-screen flex flex-col items-stretch justify-start">
+        <header class="flex items-stretch border-b ai-border flex-row ai-white-bg">
+            <div class="sidebar-width border-r ai-border flex items-center pl-3">
+                <p class="text-lg font-bold">CHAT AI</p>
+            </div>
+            <div class="grow flex justify-between items-center py-1 pr-3">
+                <p class="pl-2 md:pl-4">Chat</p>
+                <div class="flex bg-gray-100 dark:bg-gray-700 p-1 rounded-md border ai-border">
+                    <div data-view="light"
+                        class="p-2 flex items-center light-icon toggle-view active rounded-md mr-2 cursor-pointer">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
+                            width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="none" d="M0 0h24v24H0z"></path>
                             <path
-                                d="M12.741,20.917a9.389,9.389,0,0,1-1.395-.105,9.141,9.141,0,0,1-1.465-17.7,1.177,1.177,0,0,1,1.21.281,1.273,1.273,0,0,1,.325,1.293,8.112,8.112,0,0,0-.353,2.68,8.266,8.266,0,0,0,4.366,6.857,7.628,7.628,0,0,0,3.711.993,1.242,1.242,0,0,1,.994,1.963h0A9.148,9.148,0,0,1,12.741,20.917ZM10.261,4.05a.211.211,0,0,0-.065.011,8.137,8.137,0,1,0,9.131,12.526h0a.224.224,0,0,0,.013-.235.232.232,0,0,0-.206-.136A8.619,8.619,0,0,1,14.946,15.1a9.274,9.274,0,0,1-4.883-7.7,9.123,9.123,0,0,1,.4-3.008.286.286,0,0,0-.069-.285A.184.184,0,0,0,10.261,4.05Z">
+                                d="M12 9c1.65 0 3 1.35 3 3s-1.35 3-3 3-3-1.35-3-3 1.35-3 3-3m0-2c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37a.996.996 0 00-1.41 0 .996.996 0 000 1.41l1.06 1.06c.39.39 1.03.39 1.41 0a.996.996 0 000-1.41l-1.06-1.06zm1.06-10.96a.996.996 0 000-1.41.996.996 0 00-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36a.996.996 0 000-1.41.996.996 0 00-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z">
                             </path>
-                        </g>
-                    </svg>
+                        </svg>
+                    </div>
+                    <div data-view="dark" class="p-2 flex items-center dark-icon toggle-view rounded-md cursor-pointer">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
+                            width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <g id="Dark">
+                                <path
+                                    d="M12.741,20.917a9.389,9.389,0,0,1-1.395-.105,9.141,9.141,0,0,1-1.465-17.7,1.177,1.177,0,0,1,1.21.281,1.273,1.273,0,0,1,.325,1.293,8.112,8.112,0,0,0-.353,2.68,8.266,8.266,0,0,0,4.366,6.857,7.628,7.628,0,0,0,3.711.993,1.242,1.242,0,0,1,.994,1.963h0A9.148,9.148,0,0,1,12.741,20.917ZM10.261,4.05a.211.211,0,0,0-.065.011,8.137,8.137,0,1,0,9.131,12.526h0a.224.224,0,0,0,.013-.235.232.232,0,0,0-.206-.136A8.619,8.619,0,0,1,14.946,15.1a9.274,9.274,0,0,1-4.883-7.7,9.123,9.123,0,0,1,.4-3.008.286.286,0,0,0-.069-.285A.184.184,0,0,0,10.261,4.05Z">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="flex items-stretch flex-row grow">
+            <div class="sidebar-width bord ai-white-bg">
+                <div class="flex flex-col items-s p-3">
+                    <a href="#"
+                        class="bg-violet-500 text-white py-2 pl-3 rounded-lg flex items-center flex-row justify-start">
+                        <svg stroke="currentColor" class="mr-2" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                            stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12h14"></path>
+                            <path d="M12 5v14"></path>
+                        </svg>
+                        <span>New Chat</span>
+                    </a>
+                    <!-- search -->
+                    <div class="flex text-slate-500 items-center mt-3 p-2 rounded-lg bg-gray-100 dark:bg-gray-700">
+                        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                            stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.3-4.3"></path>
+                        </svg>
+                        <input type="text" placeholder="Search" class="bg-transparent outline-none ml-2 w-full">
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
-    <div class="flex items-stretch flex-row min-h-screen"></div>
+    </div>
 </body>
 
 </html>
